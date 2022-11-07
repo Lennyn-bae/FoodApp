@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const PostForm = ({create}) => {
+const RecipeForm = ({create}) => {
 
     const [recipe, setRecipe] = useState({
         title: '',
@@ -41,4 +41,4 @@ const PostForm = ({create}) => {
     )
 };
 
-export default PostForm;
+export default RecipeForm;

@@ -1,5 +1,5 @@
 import React from "react";
-import MySelect from "../../components/UI/MySelect/MySelect";
+import MySelect from "../UI/MySelect/MySelect";
 
 const PostFilter = ({filter, setFilter}) => {
 
