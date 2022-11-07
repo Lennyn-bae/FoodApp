@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import PostService from "./API/PostService";
-import PostFilter from "./components/PostFilter/PostFilter";
-import PostForm from "./components/PostForm/PostForm";
-import PostList from "./components/PostList/PostList";
+import RecipeService from "./API/RecipeService";
+import RecipeFilter from "./components/RecipeFilter/RecipeFilter";
+import RecipeForm from "./components/RecipeForm/RecipeForm";
+import RecipeList from "./components/RecipesList/RecipesList";
 import MyModal from "./components/UI/MyModal/MyModal";
 
 
@@ -28,7 +28,7 @@ function App() {
 
   async function fetchRecipes() {
     setIsRecipesLoading(true)
-    const allRecipes = await PostService.getAll(limit, page)
+    const allRecipes = await RecipeService.getAll(limit, page)
     setRecipes(allRecipes.data)
     setTotalCount(allRecipes.headers['x-total-count'])
     setIsRecipesLoading(false)
@@ -63,19 +63,19 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={fetchRecipes}>Get Recipes</button>
+      {/* <button onClick={fetchRecipes}>Get Recipes</button> */}
 
       <button onClick={() => setModal(true)}>Create a recipe</button>
 
       <MyModal visible={modal} setVisible={setModal}>
-        <PostForm create={createRecipe} />
+        <RecipeForm create={createRecipe} />
       </MyModal>
 
-      <PostFilter filter={filter} setFilter={setFilter} />
+      <RecipeFilter filter={filter} setFilter={setFilter} />
 
       {isRecipesLoading
         ? <h1>Loading</h1>
-        : <PostList remove={removeRecipe} recipes={sortedAndSearchedRecipes} />
+        : <RecipeList remove={removeRecipe} recipes={sortedAndSearchedRecipes} />
       }
 
 
