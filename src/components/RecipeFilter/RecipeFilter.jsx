@@ -3,8 +3,6 @@ import MySelect from "../UI/MySelect/MySelect";
 
 const PostFilter = ({filter, setFilter}) => {
 
-
-
     return (
         <div>
             <input
@@ -18,7 +16,7 @@ const PostFilter = ({filter, setFilter}) => {
                 defaultValue="Sort by"
                 options={[
                     { value: 'title', name: "By name" },
-                    { value: 'body', name: "By description" }
+                    { value: 'description', name: "By description" }
                 ]}
             />
         </div>
