@@ -6,7 +6,8 @@ const RecipeForm = ({create}) => {
     const [recipe, setRecipe] = useState({
         title: '',
         description: '',
-        ingredients: ''
+        ingredients: '',
+        time: ''
     })
 
     const addNewRecipe = (e) => {
@@ -18,7 +19,8 @@ const RecipeForm = ({create}) => {
         setRecipe({
             title: '',
             description: '',
-            ingredients: ''
+            ingredients: '',
+            time: ''
         })
     }
 
