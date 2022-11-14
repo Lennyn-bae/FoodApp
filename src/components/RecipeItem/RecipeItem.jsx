@@ -9,6 +9,7 @@ const PostItem = (props) => {
             <p>
                 {props.recipe.steps}
             </p>
+            <p>{props.recipe.time}</p>
             <button onClick={() => props.remove(props.recipe)} className="post__delete-button">Delete</button>
         </div>
     )
