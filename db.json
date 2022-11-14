@@ -1,163 +1,163 @@
 {
-    "recipes": [
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Crock Pot Roast",
+      "description": "Short description",
+      "ingridients": [
         {
-            "id": 1,
-            "title": "Crock Pot Roast",
-            "description": "Short description",
-            "ingridients": [
-                {
-                    "quantity": "1",
-                    "name": " beef roast",
-                    "type": "Meat"
-                },
-                {
-                    "quantity": "1 package",
-                    "name": "brown gravy mix",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "1 package",
-                    "name": "dried Italian salad dressing mix",
-                    "type": "Condiments"
-                },
-                {
-                    "quantity": "1 package",
-                    "name": "dry ranch dressing mix",
-                    "type": "Condiments"
-                },
-                {
-                    "quantity": "1/2 cup",
-                    "name": "water",
-                    "type": "Drinks"
-                }
-            ],
-            "steps": [
-                "Place beef roast in crock pot.",
-                "Mix the dried mixes together in a bowl and sprinkle over the roast.",
-                "Pour the water around the roast.",
-                "Cook on low for 7-9 hours."
-            ],
-            "timers": [
-                0,
-                0,
-                0,
-                420
-            ],
-            "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
-            "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
+          "quantity": "1",
+          "name": " beef roast",
+          "type": "Meat"
         },
         {
-            "id": 2,
-            "title": "Big Night Pizza",
-            "description": "Short description",
-            "ingredients": [
-                {
-                    "quantity": "5 teaspoons",
-                    "name": "yeast",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "5 cups",
-                    "name": "flour",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "4 tablespoons",
-                    "name": "vegetable oil",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "2 tablespoons",
-                    "name": "sugar",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "2 teaspoons",
-                    "name": "salt",
-                    "type": "Baking"
-                },
-                {
-                    "quantity": "2 cups",
-                    "name": "hot water",
-                    "type": "Misc"
-                },
-                {
-                    "quantity": "1/4 cup",
-                    "name": "pizza sauce",
-                    "type": "Misc"
-                },
-                {
-                    "quantity": "3/4 cup",
-                    "name": "mozzarella cheese",
-                    "type": "Dairy"
-                }
-            ],
-            "steps": [
-                "Add hot water to yeast in a large bowl and let sit for 15 minutes.",
-                "Mix in oil, sugar, salt, and flour and let sit for 1 hour.",
-                "Knead the dough and spread onto a pan.",
-                "Spread pizza sauce and sprinkle cheese.",
-                "Add any optional toppings as you wish.",
-                "Bake at 400 deg Fahrenheit for 15 minutes.",
-                "Enjoy!"
-            ],
-            "timers": [
-                15,
-                60,
-                0,
-                0,
-                0,
-                15,
-                0
-            ],
-            "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+          "quantity": "1 package",
+          "name": "brown gravy mix",
+          "type": "Baking"
         },
         {
-            "id": 3,
-            "title": "Curried Lentils and Rice",
-            "description": "Short description",
-            "ingredients": [
-                {
-                    "quantity": "1 quart",
-                    "name": "beef broth",
-                    "type": "Misc"
-                },
-                {
-                    "quantity": "1 cup",
-                    "name": "dried green lentils",
-                    "type": "Misc"
-                },
-                {
-                    "quantity": "1/2 cup",
-                    "name": "basmati rice",
-                    "type": "Misc"
-                },
-                {
-                    "quantity": "1 tsp",
-                    "name": "curry powder",
-                    "type": "Condiments"
-                },
-                {
-                    "quantity": "1 tsp",
-                    "name": "salt",
-                    "type": "Condiments"
-                }
-            ],
-            "steps": [
-                "Bring broth to a low boil.",
-                "Add curry powder and salt.",
-                "Cook lentils for 20 minutes.",
-                "Add rice and simmer for 20 minutes.",
-                "Enjoy!"
-            ],
-            "timers": [
-                0,
-                0,
-                20,
-                20,
-                0
-            ],
-            "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+          "quantity": "1 package",
+          "name": "dried Italian salad dressing mix",
+          "type": "Condiments"
+        },
+        {
+          "quantity": "1 package",
+          "name": "dry ranch dressing mix",
+          "type": "Condiments"
+        },
+        {
+          "quantity": "1/2 cup",
+          "name": "water",
+          "type": "Drinks"
         }
-    ]
+      ],
+      "steps": [
+        "Place beef roast in crock pot.",
+        "Mix the dried mixes together in a bowl and sprinkle over the roast.",
+        "Pour the water around the roast.",
+        "Cook on low for 7-9 hours."
+      ],
+      "timers": [
+        0,
+        0,
+        0,
+        420
+      ],
+      "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
+      "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
+    },
+    {
+      "id": 2,
+      "title": "Big Night Pizza",
+      "description": "Short description",
+      "ingredients": [
+        {
+          "quantity": "5 teaspoons",
+          "name": "yeast",
+          "type": "Baking"
+        },
+        {
+          "quantity": "5 cups",
+          "name": "flour",
+          "type": "Baking"
+        },
+        {
+          "quantity": "4 tablespoons",
+          "name": "vegetable oil",
+          "type": "Baking"
+        },
+        {
+          "quantity": "2 tablespoons",
+          "name": "sugar",
+          "type": "Baking"
+        },
+        {
+          "quantity": "2 teaspoons",
+          "name": "salt",
+          "type": "Baking"
+        },
+        {
+          "quantity": "2 cups",
+          "name": "hot water",
+          "type": "Misc"
+        },
+        {
+          "quantity": "1/4 cup",
+          "name": "pizza sauce",
+          "type": "Misc"
+        },
+        {
+          "quantity": "3/4 cup",
+          "name": "mozzarella cheese",
+          "type": "Dairy"
+        }
+      ],
+      "steps": [
+        "Add hot water to yeast in a large bowl and let sit for 15 minutes.",
+        "Mix in oil, sugar, salt, and flour and let sit for 1 hour.",
+        "Knead the dough and spread onto a pan.",
+        "Spread pizza sauce and sprinkle cheese.",
+        "Add any optional toppings as you wish.",
+        "Bake at 400 deg Fahrenheit for 15 minutes.",
+        "Enjoy!"
+      ],
+      "timers": [
+        15,
+        60,
+        0,
+        0,
+        0,
+        15,
+        0
+      ],
+      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Curried Lentils and Rice",
+      "description": "Short description",
+      "ingredients": [
+        {
+          "quantity": "1 quart",
+          "name": "beef broth",
+          "type": "Misc"
+        },
+        {
+          "quantity": "1 cup",
+          "name": "dried green lentils",
+          "type": "Misc"
+        },
+        {
+          "quantity": "1/2 cup",
+          "name": "basmati rice",
+          "type": "Misc"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "curry powder",
+          "type": "Condiments"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "salt",
+          "type": "Condiments"
+        }
+      ],
+      "steps": [
+        "Bring broth to a low boil.",
+        "Add curry powder and salt.",
+        "Cook lentils for 20 minutes.",
+        "Add rice and simmer for 20 minutes.",
+        "Enjoy!"
+      ],
+      "timers": [
+        0,
+        0,
+        20,
+        20,
+        0
+      ],
+      "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+    }
+  ]
 }

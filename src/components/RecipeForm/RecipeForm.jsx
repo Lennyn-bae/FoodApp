@@ -1,11 +1,23 @@
 import React, {useState} from "react";
+import cl from "./RecipeForm.module.css";
 
 const RecipeForm = ({create}) => {
 
+    const [level, setLevel] = useState("easy")
+
     const [recipe, setRecipe] = useState({
         title: '',
-        body: ''
+        description: '',
+        ingredients: [],
+        time: '',
+        difficulty: ''
     })
+
+    function changeCheckbox(event) {
+        setLevel(event.target.value);
+        setRecipe({ ...recipe, difficulty: event.target.value })
+
+    }
 
     const addNewRecipe = (e) => {
         e.preventDefault()
@@ -15,27 +27,80 @@ const RecipeForm = ({create}) => {
         create(newRecipe)
         setRecipe({
             title: '',
-            body: ''
+            description: '',
+            ingredients: [],
+            time: '',
+            difficulty: ''
         })
     }
 
 
     return (
-        <form>
+        <form className={cl.recipe_form}>
+            <label htmlFor="title">Title</label>
             <input
                 type="text"
                 value={recipe.title}
                 onChange={e =>
                     setRecipe({ ...recipe, title: e.target.value })}
-                placeholder="Title"
+                id="title"
             />
+            <label htmlFor="description">Descriprion</label>
             <input
+                id="description"
                 type="text"
-                placeholder="Description"
-                value={recipe.body}
+                value={recipe.description}
                 onChange={e =>
-                    setRecipe({ ...recipe, body: e.target.value })}
+                    setRecipe({ ...recipe, description: e.target.value })}
             />
+            <label htmlFor="ingredients">Ingredients</label>
+           
+            <label htmlFor="steps">Steps</label>
+            <textarea id="steps" name="steps">
+            </textarea>
+            <label htmlFor="time">Time</label>
+            <input
+                id="time"
+                type="text"
+                value={recipe.time}
+                onChange={e =>
+                    setRecipe({ ...recipe, time: e.target.value })}
+            />
+            <label htmlFor="difficulty">Difficulty</label>
+            <div>
+                <div>
+                    <div >
+                        <input type="radio" id="easy" name="difficulty" value="easy" checked={level === "easy"} onChange={changeCheckbox} />
+                            <label htmlFor="easy">easy</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="medium" name="difficulty" value="medium" checked={level === "medium"} onChange={changeCheckbox} />
+                            <label htmlFor="medium">medium</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="hard" name="difficulty" value="hard" checked={level === "hard"} onChange={changeCheckbox} />
+                            <label htmlFor="hard">hard</label>
+                    </div>
+                </div>
+            </div>
+            <label htmlFor="">Category</label>
+            <div>
+                <div>
+                    <div>
+                        <input type="radio" id="desserts" />
+                        <label htmlFor="desserts">desserts</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="fish" />
+                        <label htmlFor="fish">fish</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="meat" />
+                        <label htmlFor="meat">meat</label>
+                    </div>
+                </div>
+            </div>
+        
             <button onClick={addNewRecipe}>Add a recipe</button>
         </form>
     )

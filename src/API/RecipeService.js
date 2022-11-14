@@ -10,4 +10,26 @@ export default class RecipeService {
         })
         return response
     }
+
 }
+
+// export function createNewRecipe(title) {
+//     const response = axios.post('http://localhost:3004/recipes', {
+//         id: Date.now(),
+//         title: title,
+//         description: "Short description"
+//     })
+//     return response
+// }
+
+// axios.post('http://localhost:3004/recipes', {
+//     id: Date.now(),
+//     title: "Big Night Pizza",
+//     description: "Short description",
+// })
+//     .then(function (response) {
+//         console.log(response);
+//     })
+//     .catch(function (error) {
+//         console.log(error);
+//     });

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import RecipeService from "./API/RecipeService";
 import RecipeFilter from "./components/RecipeFilter/RecipeFilter";
@@ -50,11 +51,23 @@ function App() {
 
 
   const createRecipe = (newRecipe) => {
+    axios
+      .post('http://localhost:3004/recipes', {
+        title: newRecipe.title,
+        description: newRecipe.description,
+        time: newRecipe.time
+      })
+  
     setRecipes([...recipes, newRecipe])
     setModal(false)
   }
 
   const removeRecipe = (recipe) => {
+    axios
+      .delete(`http://localhost:3004/recipes/${recipe.id}`)
+      .then(() => {
+        alert("Post deleted!");
+      });
     setRecipes(recipes.filter(p => p.id !== recipe.id))
   }
 
