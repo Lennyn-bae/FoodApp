@@ -55,7 +55,9 @@ function App() {
       .post('http://localhost:3004/recipes', {
         title: newRecipe.title,
         description: newRecipe.description,
-        time: newRecipe.time
+        time: newRecipe.time,
+        difficulty: newRecipe.difficulty,
+        ingredients: newRecipe.ingredients
       })
   
     setRecipes([...recipes, newRecipe])

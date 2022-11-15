@@ -4,11 +4,18 @@ import cl from "./RecipeForm.module.css";
 const RecipeForm = ({create}) => {
 
     const [level, setLevel] = useState("easy")
+    const [ingredient, setIngredient] = useState({
+        title: '',
+        quatity: ''
+    })
 
     const [recipe, setRecipe] = useState({
         title: '',
         description: '',
-        ingredients: [],
+        ingredients: [{
+            title: '',
+            quantity: ''
+        }],
         time: '',
         difficulty: ''
     })
@@ -28,12 +35,25 @@ const RecipeForm = ({create}) => {
         setRecipe({
             title: '',
             description: '',
-            ingredients: [],
+            ingredients: [{
+                title: '',
+                quantity: ''
+            }],
             time: '',
             difficulty: ''
         })
     }
 
+    const addIngredient = (e) => {
+        e.preventDefault()
+      
+        setIngredient({
+            title: '',
+            quantity: ''
+        })
+        setRecipe({ ...recipe, ingredients: e.target.value  })
+    }
+console.log(recipe)
 
     return (
         <form className={cl.recipe_form}>
@@ -54,6 +74,14 @@ const RecipeForm = ({create}) => {
                     setRecipe({ ...recipe, description: e.target.value })}
             />
             <label htmlFor="ingredients">Ingredients</label>
+            <input
+                id="ingredients"
+                type="text"
+                value={recipe.ingredients.title}
+                onChange={e =>
+                    setRecipe({ ...recipe, ingredients: e.target.value })}
+            />
+            <button onClick={addIngredient}>Plus</button>
            
             <label htmlFor="steps">Steps</label>
             <textarea id="steps" name="steps">
