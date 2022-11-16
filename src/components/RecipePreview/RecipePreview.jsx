@@ -1,13 +1,14 @@
 import React from "react";
+import "./RecipePreview.scss";
 
-const PostPreview = (props) => {
+const RecipePreview = (props) => {
     return (
-        <div>
-            <h1>{props.recipe.title}</h1>
-            <p>{props.recipe.description}</p>
+        <div className="recipe-preview-card">
+            <h1 className="recipe-preview-card__title">{props.recipe.title}</h1>
+            <p className="recipe-preview-card__description">{props.recipe.description}</p>
          
         </div>
     )
 };
 
-export default PostPreview;
+export default RecipePreview;
