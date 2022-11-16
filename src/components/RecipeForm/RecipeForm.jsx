@@ -1,14 +1,21 @@
 import React, {useState} from "react";
-import cl from "./RecipeForm.module.css";
+import "./RecipeForm.scss";
 
 const RecipeForm = ({create}) => {
 
     const [level, setLevel] = useState("easy")
+    const [ingredient, setIngredient] = useState([{
+        title: '',
+        quatity: ''
+    }])
 
     const [recipe, setRecipe] = useState({
         title: '',
         description: '',
-        ingredients: [],
+        ingredients: [{
+            title: '',
+            quantity: ''
+        }],
         time: '',
         difficulty: ''
     })
@@ -28,15 +35,25 @@ const RecipeForm = ({create}) => {
         setRecipe({
             title: '',
             description: '',
-            ingredients: [],
+            ingredients: [{
+                title: '',
+                quantity: ''
+            }],
             time: '',
             difficulty: ''
         })
     }
 
+    const addIngredient = (e) => {
+        e.preventDefault()
+      
+        // setIngredient([{ title: e.target.value }])
+        setRecipe({ ...recipe, ingredients: {title: e.target.value}  })
+    }
 
+   
     return (
-        <form className={cl.recipe_form}>
+        <form className="recipe-form">
             <label htmlFor="title">Title</label>
             <input
                 type="text"
@@ -54,6 +71,13 @@ const RecipeForm = ({create}) => {
                     setRecipe({ ...recipe, description: e.target.value })}
             />
             <label htmlFor="ingredients">Ingredients</label>
+            <input
+                id="ingredients"
+                type="text"
+                value={recipe.ingredients.title}
+                onChange={e => setRecipe({ ...recipe, ingredients: [{ title: e.target.value }] })}
+            />
+            <button onClick={addIngredient}>Plus</button>
            
             <label htmlFor="steps">Steps</label>
             <textarea id="steps" name="steps">
@@ -64,7 +88,7 @@ const RecipeForm = ({create}) => {
                 type="text"
                 value={recipe.time}
                 onChange={e =>
-                    setRecipe({ ...recipe, time: e.target.value })}
+                    setIngredient([{ title: e.target.value }]) }
             />
             <label htmlFor="difficulty">Difficulty</label>
             <div>
