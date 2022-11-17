@@ -11,6 +11,11 @@ export default class RecipeService {
         return response
     }
 
+    static async getById(id) {
+        const response = await axios.get(`http://localhost:3004/recipes/` + id)
+        return response
+    }
+
 }
 
 // export function createNewRecipe(title) {
