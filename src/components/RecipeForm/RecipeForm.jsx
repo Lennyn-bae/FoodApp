@@ -88,7 +88,7 @@ const RecipeForm = ({create}) => {
                 type="text"
                 value={recipe.time}
                 onChange={e =>
-                    setIngredient([{ title: e.target.value }]) }
+                    setRecipe({ ...recipe, time: e.target.value })}
             />
             <label htmlFor="difficulty">Difficulty</label>
             <div>

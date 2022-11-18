@@ -1,23 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./RecipeItem.scss";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useFetching } from "../../hooks/useFetching";
+import RecipeService from "../../API/RecipeService";
 
-const PostItem = (props) => {
+const RecipeItem = (recipe, remove) => {
+
+    // const params = useParams();
+
+    // const [recipe, setRecipe] = useState(null);
+    // const [fetchRecipeById, isLoading, error] = useFetching(async () => {
+    //     const response = await RecipeService.getById(params.id);
+    //     setRecipe(response.data)
+    // })
+
+    // useEffect(() => {
+    //     fetchRecipeById()
+    // },[])
+
+
+
     return (
+
         <div className="post">
-            <h1 className="post__title">{props.recipe.title}</h1>
-            <p>{props.recipe.description}</p>
+
+            <h1 className="post__title">{recipe.title}</h1>
+            <p>{recipe.description}</p>
             <p>
-                {props.recipe.steps}
+                {recipe.steps}
             </p>
-            <p>{props.recipe.difficulty}</p>
-            <ul>{props.recipe.ingredients && props.recipe.ingredients.map((item, index) => 
+            <p>{recipe.difficulty}</p>
+            <ul>{recipe.ingredients && recipe.ingredients.map((item, index) =>
                 <li key={index}>{item.title}</li>
-                 )}
+            )}
             </ul>
-            <p>{props.recipe.time}</p>
-            <button onClick={() => props.remove(props.recipe)} className="post__delete-button">Delete</button>
+            <p>{recipe.time}</p>
+            <button onClick={() => remove(recipe)} className="post__delete-button">Delete</button>
         </div>
+
+
     )
 };
 
-export default PostItem;
+export default RecipeItem;
