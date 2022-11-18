@@ -85,7 +85,7 @@ function Recipes() {
 
             {isLoading
                 ? <h1>Loading</h1>
-                : <RecipeList remove={removeRecipe} recipes={sortedAndSearchedRecipes} />
+                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
             }
 
 
