@@ -57,7 +57,7 @@ function Recipes() {
                 difficulty: newRecipe.difficulty,
                 ingredients: newRecipe.ingredients
             })
-
+console.log(newRecipe)
         setRecipes([...recipes, newRecipe])
         setModal(false)
     }
