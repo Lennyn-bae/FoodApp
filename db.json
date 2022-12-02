@@ -170,30 +170,8 @@
         }
       ],
       "id": 5
-    },
-    {
-      "title": "dfdsfd",
-      "description": "sdsdsds",
-      "time": "",
-      "difficulty": "medium",
-      "ingredients": [
-        {
-          "title": "sdsdsdsdsdsds"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "title": "dfdfd",
-      "description": "ssds",
-      "time": "1212",
-      "difficulty": "hard",
-      "ingredients": [
-        {
-          "title": "eedee"
-        }
-      ],
-      "id": 7
     }
+   
+ 
   ]
 }

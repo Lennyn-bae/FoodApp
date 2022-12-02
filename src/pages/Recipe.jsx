@@ -28,9 +28,9 @@ const Recipe = () => {
     return (
         <>
             {isLoading ? <p>Loading</p> : recipe && 
-            <div className="post">
+            <div className="recipe">
 
-                <h1 className="post__title">{recipe.title}</h1>
+                <h1 className="recipe__title">{recipe.title}</h1>
                 <p>{recipe.description}</p>
                 <p>
                     {recipe.steps}
