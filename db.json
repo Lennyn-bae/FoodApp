@@ -37,19 +37,15 @@
         "Pour the water around the roast.",
         "Cook on low for 7-9 hours."
       ],
-      "timers": [
-        0,
-        0,
-        0,
-        420
-      ],
-      "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
+      "imageURL": "src/assets/images/food.png",
       "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
     },
     {
       "id": 2,
       "title": "Big Night Pizza",
       "description": "Short description",
+      "difficulty": "medium",
+      "time": "35 min",
       "ingredients": [
         {
           "quantity": "5 teaspoons",
@@ -101,16 +97,7 @@
         "Bake at 400 deg Fahrenheit for 15 minutes.",
         "Enjoy!"
       ],
-      "timers": [
-        15,
-        60,
-        0,
-        0,
-        0,
-        15,
-        0
-      ],
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+      "imageURL": "src/assets/images/food.png"
     },
     {
       "id": 3,
