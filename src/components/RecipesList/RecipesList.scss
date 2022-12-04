@@ -1,4 +1,32 @@
 .recipes {
-    height: 350px;
-    display: flex;
+    &__container {
+        display: grid;
+        gap: 50px;
+        grid-auto-flow: column;
+        padding: 0 10px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+
+    &__item {
+        display: grid;
+        min-width: 240px;
+        width: 100%;
+        padding: 15px;
+        border-radius: 25px;
+        background-color: #FEBD2F;
+    }
+}
+
+.recipes__container::-webkit-scrollbar {
+    width: 0;
+}
+
+.recipes .snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: (10px, 1rem);
+}
+
+.snaps-inline>* {
+    scroll-snap-align: start;
 }
