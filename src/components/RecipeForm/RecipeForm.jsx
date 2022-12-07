@@ -4,6 +4,8 @@ import "./RecipeForm.scss";
 const RecipeForm = ({create}) => {
 
     const [level, setLevel] = useState("easy")
+    const [category, setCategory] = useState("meat")
+
     const [ingredients, setIngredients] = useState([{
         title: '',
         quantity: ''
@@ -12,12 +14,14 @@ const RecipeForm = ({create}) => {
     const [recipe, setRecipe] = useState({
         title: '',
         description: '',
-        ingredients: [{
+        ingredients: {
             title: '',
             quantity: ''
-        }],
+        },
         time: '',
-        difficulty: ''
+        difficulty: level,
+        category: category,
+        steps: ''
     })
 
 
@@ -54,13 +58,19 @@ const RecipeForm = ({create}) => {
         const newItems = [...ingredients, newItem];
 
         setIngredients(newItems);
-        setRecipe({ ...recipe, ingredients: [{ title: e.target.value }] })
+        setRecipe({ ...recipe, ingredients: newItem })
     };
 
 
-    function changeCheckbox(event) {
-        setLevel(event.target.value);
-        setRecipe({ ...recipe, difficulty: event.target.value })
+    const changeDifficultyLevel = (e) => {
+        setLevel(e.target.value);
+        setRecipe({ ...recipe, difficulty: e.target.value })
+
+    }
+
+    const changeCategory = (e) => {
+        setCategory(e.target.value);
+        setRecipe({ ...recipe, category: e.target.value })
 
     }
 
@@ -70,16 +80,16 @@ const RecipeForm = ({create}) => {
             ...recipe, id: Date.now()
         }
         create(newRecipe)
-        setRecipe({
-            title: '',
-            description: '',
-            ingredients: {
-                title: '',
-                quantity: ''
-            },
-            time: '',
-            difficulty: ''
-        })
+        // setRecipe({
+        //     title: '',
+        //     description: '',
+        //     ingredients: {
+        //         title: '',
+        //         quantity: ''
+        //     },
+        //     time: '',
+        //     difficulty: ''
+        // })
     }
 
     // const addIngredient = (e) => {
@@ -155,7 +165,8 @@ const RecipeForm = ({create}) => {
 
 
             <label htmlFor="steps">Steps</label>
-            <textarea id="steps" name="steps">
+            <textarea id="steps" name="steps" value={recipe.steps} onChange={e =>
+                setRecipe({ ...recipe, steps: e.target.value })} >
             </textarea>
             <label htmlFor="time">Time</label>
             <input
@@ -169,32 +180,32 @@ const RecipeForm = ({create}) => {
             <div>
                 <div>
                     <div >
-                        <input type="radio" id="easy" name="difficulty" value="easy" checked={level === "easy"} onChange={changeCheckbox} />
+                        <input type="radio" id="easy" name="difficulty" value="easy" checked={level === "easy"} onChange={changeDifficultyLevel} />
                             <label htmlFor="easy">easy</label>
                     </div>
                     <div>
-                        <input type="radio" id="medium" name="difficulty" value="medium" checked={level === "medium"} onChange={changeCheckbox} />
+                        <input type="radio" id="medium" name="difficulty" value="medium" checked={level === "medium"} onChange={changeDifficultyLevel} />
                             <label htmlFor="medium">medium</label>
                     </div>
                     <div>
-                        <input type="radio" id="hard" name="difficulty" value="hard" checked={level === "hard"} onChange={changeCheckbox} />
+                        <input type="radio" id="hard" name="difficulty" value="hard" checked={level === "hard"} onChange={changeDifficultyLevel} />
                             <label htmlFor="hard">hard</label>
                     </div>
                 </div>
             </div>
-            <label htmlFor="">Category</label>
+            <label htmlFor="category">Category</label>
             <div>
                 <div>
                     <div>
-                        <input type="radio" id="desserts" />
+                        <input type="radio" id="desserts" value="desserts" checked={category === "desserts"} onChange={changeCategory} />
                         <label htmlFor="desserts">desserts</label>
                     </div>
                     <div>
-                        <input type="radio" id="fish" />
+                        <input type="radio" id="fish" value="fish" checked={category === "fish"} onChange={changeCategory} />
                         <label htmlFor="fish">fish</label>
                     </div>
                     <div>
-                        <input type="radio" id="meat" />
+                        <input type="radio" id="meat" value="meat" checked={category === "meat"} onChange={changeCategory} />
                         <label htmlFor="meat">meat</label>
                     </div>
                 </div>
