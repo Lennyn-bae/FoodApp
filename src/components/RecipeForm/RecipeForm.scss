@@ -2,3 +2,28 @@
     display: flex;
     flex-direction: column;
 }
+
+.recipe {
+    &__difficulty-title {
+        margin-bottom: 10px;
+    }
+
+    &__difficulty-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__difficulty-input {
+        visibility: hidden;
+        position: absolute;
+
+        &:checked + .recipe__difficulty-name {
+                color: #FEBD2F;
+            }
+    }
+
+    &__difficulty-label {
+        position: relative;
+        padding: 10px 15px;
+    }
+}

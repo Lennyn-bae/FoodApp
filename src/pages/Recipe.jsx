@@ -46,9 +46,10 @@ const Recipe = () => {
                         </p>
                         <h3 className="recipes__ingrediets-title">Ingredients</h3>
                         <ul className="recipe__ingredients">
-                            {recipe.ingredients && recipe.ingredients.map((item, index) =>
+                            {console.log(recipe.ingredients)}
+                            {/* {recipe.ingredients && recipe.ingredients.map((item, index) =>
                                 <li key={index} className="recipe__ingredient">{item.title}</li>
-                            )}
+                            )} */}
                         </ul>
                         <p className="recipe__steps">
                             {recipe.steps}

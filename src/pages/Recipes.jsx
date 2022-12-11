@@ -55,7 +55,9 @@ function Recipes() {
                 description: newRecipe.description,
                 time: newRecipe.time,
                 difficulty: newRecipe.difficulty,
-                ingredients: newRecipe.ingredients
+                category: newRecipe.category,
+                ingredients: newRecipe.ingredients,
+                steps: newRecipe.steps
             })
 console.log(newRecipe)
         setRecipes([...recipes, newRecipe])
