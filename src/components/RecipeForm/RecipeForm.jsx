@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./RecipeForm.scss";
 
-const RecipeForm = ({create}) => {
+const RecipeForm = ({ create }) => {
 
     const [level, setLevel] = useState("easy")
     const [category, setCategory] = useState("meat")
@@ -93,12 +93,12 @@ const RecipeForm = ({create}) => {
     }
 
     // const addIngredient = (e) => {
-      
+
     //     // setIngredient([{ title: e.target.value }])
     //     setRecipe({ ...recipe, ingredients: {title: e.target.value}  })
     // }
 
-   
+
     return (
         <form className="recipe-form">
             <label htmlFor="title">Title</label>
@@ -127,13 +127,13 @@ const RecipeForm = ({create}) => {
                 // onChange={e => setRecipe({ ...recipe, ingredients: [{ title: e.target.value }] })}
                 onChange={(e) => setInputValue(e.target.value)}
             />
-            <input 
+            <input
                 id="ingredients-quantity"
                 type="text"
-                value={quant} 
-                onChange={(event) => setQuant(event.target.value)} 
-                className='add-item-input' 
-                placeholder='How much' 
+                value={quant}
+                onChange={(event) => setQuant(event.target.value)}
+                className='add-item-input'
+                placeholder='How much'
             />
             <div className='item-list'>
                 {ingredients.map((item, index) => (
@@ -176,24 +176,54 @@ const RecipeForm = ({create}) => {
                 onChange={e =>
                     setRecipe({ ...recipe, time: e.target.value })}
             />
-            <label htmlFor="difficulty">Difficulty</label>
-            <div>
-                <div>
-                    <div >
-                        <input type="radio" id="easy" name="difficulty" value="easy" checked={level === "easy"} onChange={changeDifficultyLevel} />
-                            <label htmlFor="easy">easy</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="difficulty" value="medium" checked={level === "medium"} onChange={changeDifficultyLevel} />
-                            <label htmlFor="medium">medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="hard" name="difficulty" value="hard" checked={level === "hard"} onChange={changeDifficultyLevel} />
-                            <label htmlFor="hard">hard</label>
-                    </div>
+
+            <h3 className="recipe__difficulty-title">Difficulty</h3>
+            <div className="recipe__difficulty-wrapper">
+                <div className="recipe__difficulty-easy">
+                    <label htmlFor="easy" className="recipe__difficulty-label">
+                        <input
+                            type="radio"
+                            id="easy"
+                            name="difficulty"
+                            value="easy"
+                            className="recipe__difficulty-input"
+                            checked={level === "easy"}
+                            onChange={changeDifficultyLevel}
+                        />
+                        <span className="recipe__difficulty-name">easy</span>
+                    </label>
+                </div>
+                <div className="recipe__difficulty-medium">
+                    <label htmlFor="medium" className="recipe__difficulty-label">
+                        <input
+                            type="radio"
+                            id="medium"
+                            name="difficulty"
+                            value="medium"
+                            className="recipe__difficulty-input"
+                            checked={level === "medium"}
+                            onChange={changeDifficultyLevel}
+                        />
+                        <span className="recipe__difficulty-name">medium</span>
+                    </label>
+                </div>
+                <div className="recipe__difficulty-hard">
+                    <label htmlFor="hard" className="recipe__difficulty-label">
+                        <input
+                            type="radio"
+                            id="hard"
+                            name="difficulty"
+                            value="hard"
+                            className="recipe__difficulty-input"
+                            checked={level === "hard"}
+                            onChange={changeDifficultyLevel}
+                        />
+                        <span className="recipe__difficulty-name">hard</span>
+                    </label>
                 </div>
             </div>
-            <label htmlFor="category">Category</label>
+
+            <label htmlFor="category" className="recipe__category-title">Category</label>
             <div>
                 <div>
                     <div>
@@ -210,7 +240,7 @@ const RecipeForm = ({create}) => {
                     </div>
                 </div>
             </div>
-        
+
             <button onClick={addNewRecipe}>Add a recipe</button>
         </form>
     )
