@@ -59,7 +59,6 @@ function Recipes() {
                 ingredients: newRecipe.ingredients,
                 steps: newRecipe.steps
             })
-console.log(newRecipe)
         setRecipes([...recipes, newRecipe])
         setModal(false)
     }
@@ -87,7 +86,7 @@ console.log(newRecipe)
 
             {isLoading
                 ? <h1>Loading</h1>
-                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
+                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe}/>
             }
 
 

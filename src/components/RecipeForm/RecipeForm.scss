@@ -1,4 +1,4 @@
-.recipe-form {
+.recipe__form {
     display: flex;
     flex-direction: column;
 }
@@ -25,5 +25,10 @@
     &__difficulty-label {
         position: relative;
         padding: 10px 15px;
+    }
+
+    &__form-input {
+        width: 100%;
+        max-width: 90%;
     }
 }
