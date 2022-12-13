@@ -6,18 +6,12 @@ const RecipeForm = ({ create }) => {
     const [level, setLevel] = useState("easy")
     const [category, setCategory] = useState("meat")
 
-    const [ingredients, setIngredients] = useState([{
-        title: '',
-        quantity: ''
-    }])
+    const [ingredients, setIngredients] = useState([])
 
     const [recipe, setRecipe] = useState({
         title: '',
         description: '',
-        ingredients: {
-            title: '',
-            quantity: ''
-        },
+        ingredients: [],
         time: '',
         difficulty: level,
         category: category,
@@ -25,27 +19,8 @@ const RecipeForm = ({ create }) => {
     })
 
 
-    // const [items, setItems] = useState([
-    //     { itemName: 'item 1', quantity: 1},
-    //     { itemName: 'item 2', quantity: 3 },
-    //     { itemName: 'item 3', quantity: 2 },
-    // ]);
-
     const [inputValue, setInputValue] = useState('');
     const [quant, setQuant] = useState(1);
-
-    // const handleAddButtonClick = (e) => {
-    //     e.preventDefault()
-    //     const newItem = {
-    //         itemName: inputValue,
-    //         quantity: quant
-    //     };
-
-    //     const newItems = [...items, newItem];
-
-    //     setItems(newItems);
-    //     setInputValue('');
-    // };
 
 
     const handleIngredients = (e) => {
@@ -56,9 +31,8 @@ const RecipeForm = ({ create }) => {
         };
 
         const newItems = [...ingredients, newItem];
-
         setIngredients(newItems);
-        setRecipe({ ...recipe, ingredients: newItem })
+        setRecipe({ ...recipe, ingredients: newItems })
     };
 
 
@@ -80,40 +54,25 @@ const RecipeForm = ({ create }) => {
             ...recipe, id: Date.now()
         }
         create(newRecipe)
-        // setRecipe({
-        //     title: '',
-        //     description: '',
-        //     ingredients: {
-        //         title: '',
-        //         quantity: ''
-        //     },
-        //     time: '',
-        //     difficulty: ''
-        // })
     }
 
-    // const addIngredient = (e) => {
-
-    //     // setIngredient([{ title: e.target.value }])
-    //     setRecipe({ ...recipe, ingredients: {title: e.target.value}  })
-    // }
-
-
     return (
-        <form className="recipe-form">
-            <label htmlFor="title">Title</label>
+        <form className="recipe__form">
+            <label htmlFor="title" className="recipe__title">Title</label>
             <input
                 type="text"
                 value={recipe.title}
                 onChange={e =>
                     setRecipe({ ...recipe, title: e.target.value })}
                 id="title"
+                className="recipe__form-input"
             />
             <label htmlFor="description">Descriprion</label>
             <input
                 id="description"
                 type="text"
                 value={recipe.description}
+                className="recipe__form-input"
                 onChange={e =>
                     setRecipe({ ...recipe, description: e.target.value })}
             />
@@ -124,7 +83,6 @@ const RecipeForm = ({ create }) => {
                 id="ingredients-title"
                 type="text"
                 value={inputValue}
-                // onChange={e => setRecipe({ ...recipe, ingredients: [{ title: e.target.value }] })}
                 onChange={(e) => setInputValue(e.target.value)}
             />
             <input
@@ -148,31 +106,21 @@ const RecipeForm = ({ create }) => {
             <button onClick={handleIngredients}>Plus</button>
 
 
-            {/* <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
-            <input value={quant} onChange={(event) => setQuant(event.target.value)} className='add-item-input' placeholder='How much' />
-            <button onClick={handleAddButtonClick}> addd</button>
-            <div className='item-list'>
-                {items.map((item, index) => (
-                    <div className='item-container' key={index}>
-                        <span>{item.itemName}</span>
-                        <div className='quantity'>
-                            <span>{item.quantity}</span>
-                        </div>
-                    </div>
-                ))}
-            </div> */}
-
-
-
             <label htmlFor="steps">Steps</label>
-            <textarea id="steps" name="steps" value={recipe.steps} onChange={e =>
-                setRecipe({ ...recipe, steps: e.target.value })} >
+            <textarea
+                id="steps"
+                name="steps"
+                value={recipe.steps}
+                className="recipe-form__input"
+                onChange={e =>
+                    setRecipe({ ...recipe, steps: e.target.value })} >
             </textarea>
             <label htmlFor="time">Time</label>
             <input
                 id="time"
                 type="text"
                 value={recipe.time}
+                className="recipe__form-input"
                 onChange={e =>
                     setRecipe({ ...recipe, time: e.target.value })}
             />

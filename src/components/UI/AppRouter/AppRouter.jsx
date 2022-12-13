@@ -5,8 +5,6 @@ import About from "../../../pages/About";
 import Main from "../../../pages/Main";
 import Recipe from "../../../pages/Recipe";
 import Recipes from "../../../pages/Recipes";
-import RecipeItem from "../../RecipeItem/RecipeItem";
-
 
 const AppRouter = () => {
 
