@@ -1,0 +1,14 @@
+$colors: (
+    "black": #17212B,
+    "border": #EAEDF0,
+    "orange": #FEBD2F,
+    "white": #FFFFFF,
+);
+
+:export {
+
+    @each $name,
+    $color in $colors {
+        #{$name}: #{$color};
+    }
+}

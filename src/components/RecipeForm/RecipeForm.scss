@@ -28,7 +28,14 @@
     }
 
     &__form-input {
-        width: 100%;
-        max-width: 90%;
+        outline: none;
+        border-radius: 8px;
+        border: 1px solid #DBDBDB;
+        padding: 8px;
+        margin: 0;
+    }
+
+    &__ingredients {
+        display: flex;
     }
 }

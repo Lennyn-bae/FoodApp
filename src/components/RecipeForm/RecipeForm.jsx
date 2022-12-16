@@ -79,20 +79,24 @@ const RecipeForm = ({ create }) => {
 
 
             <label htmlFor="ingredients">Ingredients</label>
-            <input
-                id="ingredients-title"
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-            />
-            <input
-                id="ingredients-quantity"
-                type="text"
-                value={quant}
-                onChange={(event) => setQuant(event.target.value)}
-                className='add-item-input'
-                placeholder='How much'
-            />
+            <div className="recipe__ingredients">
+                <input
+                    id="ingredients-title"
+                    type="text"
+                    value={inputValue}
+                    className="recipe__form-input"
+                    onChange={(e) => setInputValue(e.target.value)}
+                />
+                <input
+                    id="ingredients-quantity"
+                    type="text"
+                    value={quant}
+                    onChange={(event) => setQuant(event.target.value)}
+                    className="recipe__form-input"
+                    placeholder='How much'
+                />
+            </div>
+          
             <div className='item-list'>
                 {ingredients.map((item, index) => (
                     <div className='item-container' key={index}>
