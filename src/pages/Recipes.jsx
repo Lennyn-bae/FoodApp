@@ -4,7 +4,8 @@ import RecipeService from "../API/RecipeService";
 import RecipeFilter from "../components/RecipeFilter/RecipeFilter";
 import RecipeForm from "../components/RecipeForm/RecipeForm";
 import RecipeList from "../components/RecipesList/RecipesList";
-import MyModal from "../components/UI/MyModal/MyModal";
+import RecipeCreationModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
+import MyModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
 import { useFetching } from "../hooks/useFetching";
 import { useRecipes } from "../hooks/useRecipes";
 
@@ -25,7 +26,7 @@ function Recipes() {
     const [page, setPage] = useState(1)
     const [modal, setModal] = useState(false)
     // const [isRecipesLoading, setIsRecipesLoading] = useState(false)
-  
+
 
     const [fetchRecipes, isLoading] = useFetching(async () => {
         const allRecipes = await RecipeService.getAll(limit, page)
@@ -33,20 +34,12 @@ function Recipes() {
         setTotalCount(allRecipes.headers['x-total-count'])
     })
 
-    // async function fetchRecipes() {
-    //     setIsRecipesLoading(true)
-    //     const allRecipes = await RecipeService.getAll(limit, page)
-    //     setRecipes(allRecipes.data)
-    //     setTotalCount(allRecipes.headers['x-total-count'])
-    //     setIsRecipesLoading(false)
-
-    // }
 
     useEffect(() => {
         fetchRecipes()
     }, [])
 
-   const sortedAndSearchedRecipes = useRecipes(recipes, filter.sort, filter.query);
+    const sortedAndSearchedRecipes = useRecipes(recipes, filter.sort, filter.query);
 
     const createRecipe = (newRecipe) => {
         axios
@@ -67,30 +60,28 @@ function Recipes() {
         axios
             .delete(`http://localhost:3004/recipes/${recipe.id}`)
             .then(() => {
-                alert("Post deleted!");
+                console.log("Recipe was deleted!");
             });
-        setRecipes(recipes.filter(p => p.id !== recipe.id))
+        setRecipes(recipes.filter(rec => rec.id !== recipe.id))
     }
 
+
     return (
-        <div className="App">
-            {/* <button onClick={fetchRecipes}>Get Recipes</button> */}
+        <section className="App">
 
-            <button onClick={() => setModal(true)}>Create a recipe</button>
-
-            <MyModal visible={modal} setVisible={setModal}>
+            <RecipeCreationModal visible={modal} setVisible={setModal}>
                 <RecipeForm create={createRecipe} />
-            </MyModal>
+            </RecipeCreationModal>
 
             <RecipeFilter filter={filter} setFilter={setFilter} />
 
             {isLoading
                 ? <h1>Loading</h1>
-                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe}/>
+                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
             }
 
-
-        </div>
+            <button onClick={() => setModal(true)}>Create a recipe</button>
+        </section>
     );
 }
 

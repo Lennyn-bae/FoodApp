@@ -1,4 +1,4 @@
-.myModal {
+.recipeModal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -8,14 +8,14 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.myModalContent {
+.recipeModalContent {
     padding: 25px;
     background-color: #fff;
     border-radius: 15px;
     min-width: 250px;
 }
 
-.myModal.active {
+.recipeModal.active {
     display: flex;
     justify-content: center;
     align-items: center;
