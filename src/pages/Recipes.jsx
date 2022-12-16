@@ -5,7 +5,6 @@ import RecipeFilter from "../components/RecipeFilter/RecipeFilter";
 import RecipeForm from "../components/RecipeForm/RecipeForm";
 import RecipeList from "../components/RecipesList/RecipesList";
 import RecipeCreationModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
-import MyModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
 import { useFetching } from "../hooks/useFetching";
 import { useRecipes } from "../hooks/useRecipes";
 
