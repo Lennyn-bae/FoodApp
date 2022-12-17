@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .recipe__form {
     display: flex;
     flex-direction: column;
@@ -18,24 +20,61 @@
         position: absolute;
 
         &:checked + .recipe__difficulty-name {
-                color: #FEBD2F;
+                background-color: $color-primary-card;
+                border-radius: 8px;
+                color: #fff;
             }
+    }
+
+    &__difficulty-name {
+        padding: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__difficulty-label {
         position: relative;
-        padding: 10px 15px;
+        display: block;
+        min-width: 80px;
+        border: 1px solid $color-border;
+        border-radius: 8px;
+    }
+
+    &__difficulty-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    &__form-intro {
+        display: flex;
     }
 
     &__form-input {
         outline: none;
         border-radius: 8px;
-        border: 1px solid #DBDBDB;
+        border: 1px solid $color-border;
         padding: 8px;
         margin: 0;
     }
 
+    &__form-quantity {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    &__form-text {
+        border-color: $color-border;
+    }
+
     &__ingredients {
         display: flex;
+    }
+
+    &__product-wrapper {
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid $color-border;
+        border-radius: 5px;
     }
 }
