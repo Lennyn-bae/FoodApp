@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ReactComponent as IconLightning } from "../../assets/icons/lightning.svg";
 import "./RecipeForm.scss";
 
 const RecipeForm = ({ create }) => {
@@ -58,15 +59,27 @@ const RecipeForm = ({ create }) => {
 
     return (
         <form className="recipe__form">
-            <label htmlFor="title" className="recipe__title">Title</label>
-            <input
-                type="text"
-                value={recipe.title}
-                onChange={e =>
-                    setRecipe({ ...recipe, title: e.target.value })}
-                id="title"
-                className="recipe__form-input"
-            />
+            <div className="recipe__form-intro">
+                <label htmlFor="title" className="recipe__title">Title</label>
+                <input
+                    type="text"
+                    value={recipe.title}
+                    onChange={e =>
+                        setRecipe({ ...recipe, title: e.target.value })}
+                    id="title"
+                    className="recipe__form-input"
+                />
+       
+                <label htmlFor="time">Time</label>
+                <input
+                    id="time"
+                    type="text"
+                    value={recipe.time}
+                    className="recipe__form-input"
+                    onChange={e =>
+                        setRecipe({ ...recipe, time: e.target.value })}
+                />
+            </div>
             <label htmlFor="description">Descriprion</label>
             <input
                 id="description"
@@ -92,18 +105,16 @@ const RecipeForm = ({ create }) => {
                     type="text"
                     value={quant}
                     onChange={(event) => setQuant(event.target.value)}
-                    className="recipe__form-input"
+                    className="recipe__form-input recipe__form-quantity"
                     placeholder='How much'
                 />
             </div>
-          
-            <div className='item-list'>
+
+            <div className="recipe__added-products">
                 {ingredients.map((item, index) => (
-                    <div className='item-container' key={index}>
-                        <span>{item.title}</span>
-                        <div className='quantity'>
-                            <span>{item.quantity}</span>
-                        </div>
+                    <div className="recipe__product-wrapper" key={index}>
+                        <span className="recipe__product-name">{item.title}</span>
+                        <span className="recipe__product0quantity">{item.quantity}</span>
                     </div>
                 ))}
             </div>
@@ -114,24 +125,17 @@ const RecipeForm = ({ create }) => {
             <textarea
                 id="steps"
                 name="steps"
+                rows={6}
                 value={recipe.steps}
-                className="recipe-form__input"
+                className="recipe__form-text"
                 onChange={e =>
                     setRecipe({ ...recipe, steps: e.target.value })} >
             </textarea>
-            <label htmlFor="time">Time</label>
-            <input
-                id="time"
-                type="text"
-                value={recipe.time}
-                className="recipe__form-input"
-                onChange={e =>
-                    setRecipe({ ...recipe, time: e.target.value })}
-            />
+
 
             <h3 className="recipe__difficulty-title">Difficulty</h3>
             <div className="recipe__difficulty-wrapper">
-                <div className="recipe__difficulty-easy">
+                <div className="recipe__difficulty">
                     <label htmlFor="easy" className="recipe__difficulty-label">
                         <input
                             type="radio"
@@ -142,10 +146,16 @@ const RecipeForm = ({ create }) => {
                             checked={level === "easy"}
                             onChange={changeDifficultyLevel}
                         />
-                        <span className="recipe__difficulty-name">easy</span>
+                        <span className="recipe__difficulty-name">
+                            {level === "easy"
+                                ? <IconLightning className="recipe__difficulty-icon" />
+                                : null
+                            }
+                            easy
+                        </span>
                     </label>
                 </div>
-                <div className="recipe__difficulty-medium">
+                <div className="recipe__difficulty">
                     <label htmlFor="medium" className="recipe__difficulty-label">
                         <input
                             type="radio"
@@ -156,10 +166,16 @@ const RecipeForm = ({ create }) => {
                             checked={level === "medium"}
                             onChange={changeDifficultyLevel}
                         />
-                        <span className="recipe__difficulty-name">medium</span>
+                        <span className="recipe__difficulty-name">
+                            {level === "medium"
+                                ? <IconLightning className="recipe__difficulty-icon" />
+                                : null
+                            }
+                            medium
+                        </span>
                     </label>
                 </div>
-                <div className="recipe__difficulty-hard">
+                <div className="recipe__difficulty">
                     <label htmlFor="hard" className="recipe__difficulty-label">
                         <input
                             type="radio"
@@ -170,7 +186,13 @@ const RecipeForm = ({ create }) => {
                             checked={level === "hard"}
                             onChange={changeDifficultyLevel}
                         />
-                        <span className="recipe__difficulty-name">hard</span>
+                        <span className="recipe__difficulty-name">
+                            {level === "hard"
+                                ? <IconLightning className="recipe__difficulty-icon" />
+                                : null
+                            }
+                            hard
+                        </span>
                     </label>
                 </div>
             </div>
