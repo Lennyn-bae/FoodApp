@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as IconLightning } from "../../assets/icons/lightning.svg";
+import { ReactComponent as IconPlus } from "../../assets/icons/plus.svg";
 import "./RecipeForm.scss";
 
 const RecipeForm = ({ create }) => {
@@ -60,25 +61,29 @@ const RecipeForm = ({ create }) => {
     return (
         <form className="recipe__form">
             <div className="recipe__form-intro">
-                <label htmlFor="title" className="recipe__title">Title</label>
-                <input
-                    type="text"
-                    value={recipe.title}
-                    onChange={e =>
-                        setRecipe({ ...recipe, title: e.target.value })}
-                    id="title"
-                    className="recipe__form-input"
-                />
-       
-                <label htmlFor="time">Time</label>
-                <input
-                    id="time"
-                    type="text"
-                    value={recipe.time}
-                    className="recipe__form-input"
-                    onChange={e =>
-                        setRecipe({ ...recipe, time: e.target.value })}
-                />
+               
+                    <input
+                        type="text"
+                        value={recipe.title}
+                        onChange={e =>
+                            setRecipe({ ...recipe, title: e.target.value })}
+                        id="title"
+                        className="recipe__form-input recipe__form-title"
+                    />
+             
+
+
+             
+                    <input
+                        id="time"
+                        type="text"
+                        value={recipe.time}
+                        className="recipe__form-input recipe__form-time"
+                        onChange={e =>
+                            setRecipe({ ...recipe, time: e.target.value })}
+                    />
+         
+
             </div>
             <label htmlFor="description">Descriprion</label>
             <input
@@ -91,13 +96,13 @@ const RecipeForm = ({ create }) => {
             />
 
 
-            <label htmlFor="ingredients">Ingredients</label>
+            <h4 htmlFor="ingredients">Ingredients</h4>
             <div className="recipe__ingredients">
                 <input
                     id="ingredients-title"
                     type="text"
                     value={inputValue}
-                    className="recipe__form-input"
+                    className="recipe__form-input recipe__form-title"
                     onChange={(e) => setInputValue(e.target.value)}
                 />
                 <input
@@ -108,7 +113,11 @@ const RecipeForm = ({ create }) => {
                     className="recipe__form-input recipe__form-quantity"
                     placeholder='How much'
                 />
+                <button className="recipe__button-plus" onClick={handleIngredients}>
+                    <IconPlus className="recipe__button-plus-icon" />
+                </button>
             </div>
+
 
             <div className="recipe__added-products">
                 {ingredients.map((item, index) => (
@@ -118,7 +127,7 @@ const RecipeForm = ({ create }) => {
                     </div>
                 ))}
             </div>
-            <button onClick={handleIngredients}>Plus</button>
+
 
 
             <label htmlFor="steps">Steps</label>
@@ -201,16 +210,41 @@ const RecipeForm = ({ create }) => {
             <div>
                 <div>
                     <div>
-                        <input type="radio" id="desserts" value="desserts" checked={category === "desserts"} onChange={changeCategory} />
-                        <label htmlFor="desserts">desserts</label>
+
+                        <label htmlFor="desserts">
+                            <input
+                                type="radio"
+                                id="desserts"
+                                value="desserts"
+                                checked={category === "desserts"}
+                                onChange={changeCategory}
+                            />
+                            desserts
+                        </label>
                     </div>
                     <div>
-                        <input type="radio" id="fish" value="fish" checked={category === "fish"} onChange={changeCategory} />
-                        <label htmlFor="fish">fish</label>
+                        <label htmlFor="fish">
+                            <input
+                                type="radio"
+                                id="fish"
+                                value="fish"
+                                checked={category === "fish"}
+                                onChange={changeCategory}
+                            />
+                            fish
+                        </label>
                     </div>
                     <div>
-                        <input type="radio" id="meat" value="meat" checked={category === "meat"} onChange={changeCategory} />
-                        <label htmlFor="meat">meat</label>
+                        <label htmlFor="meat">
+                            <input
+                                type="radio"
+                                id="meat"
+                                value="meat"
+                                checked={category === "meat"}
+                                onChange={changeCategory}
+                            />
+                            meat
+                        </label>
                     </div>
                 </div>
             </div>
