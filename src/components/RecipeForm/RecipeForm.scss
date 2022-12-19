@@ -58,9 +58,17 @@
         margin: 0;
     }
 
+    &__form-title {
+        width: 100%;
+    }
+
     &__form-quantity {
         width: 100%;
         margin-left: 10px;
+    }
+
+    &__form-time {
+        width: 100%;
     }
 
     &__form-text {
@@ -92,5 +100,9 @@
         width: 25px;
         height: 25px;
         vertical-align: middle;
+    }
+
+    &__time {
+        margin-left: 10px;
     }
 }

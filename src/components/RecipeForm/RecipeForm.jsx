@@ -61,30 +61,28 @@ const RecipeForm = ({ create }) => {
     return (
         <form className="recipe__form">
             <div className="recipe__form-intro">
-                <label htmlFor="title" className="recipe__title">
-                    Title
+               
                     <input
                         type="text"
                         value={recipe.title}
                         onChange={e =>
                             setRecipe({ ...recipe, title: e.target.value })}
                         id="title"
-                        className="recipe__form-input"
+                        className="recipe__form-input recipe__form-title"
                     />
-                </label>
+             
 
 
-                <label htmlFor="time">
-                    Time
+             
                     <input
                         id="time"
                         type="text"
                         value={recipe.time}
-                        className="recipe__form-input"
+                        className="recipe__form-input recipe__form-time"
                         onChange={e =>
                             setRecipe({ ...recipe, time: e.target.value })}
                     />
-                </label>
+         
 
             </div>
             <label htmlFor="description">Descriprion</label>
@@ -104,7 +102,7 @@ const RecipeForm = ({ create }) => {
                     id="ingredients-title"
                     type="text"
                     value={inputValue}
-                    className="recipe__form-input"
+                    className="recipe__form-input recipe__form-title"
                     onChange={(e) => setInputValue(e.target.value)}
                 />
                 <input
