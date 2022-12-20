@@ -46,8 +46,8 @@ function Recipes() {
                 title: newRecipe.title,
                 description: newRecipe.description,
                 time: newRecipe.time,
+                serving: newRecipe.serving,
                 difficulty: newRecipe.difficulty,
-                category: newRecipe.category,
                 ingredients: newRecipe.ingredients,
                 steps: newRecipe.steps
             })
@@ -79,7 +79,7 @@ function Recipes() {
                 : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
             }
 
-            <button onClick={() => setModal(true)}>Create a recipe</button>
+            <button className="recipe__button-add"  onClick={() => setModal(true)}>Add a recipe</button>
         </section>
     );
 }

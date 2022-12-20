@@ -32,3 +32,14 @@
 .snaps-inline>* {
     scroll-snap-align: start;
 }
+
+.recipe {
+    &__button-add {
+        background-color: $color-primary-button;
+        color: $color-white;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 18px;
+        border: none;
+    }
+}

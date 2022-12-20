@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.recipe {
+    &__search {
+        padding: 10px;
+        border: 1px solid $color-border;
+        border-radius: 15px;
+    }
+}

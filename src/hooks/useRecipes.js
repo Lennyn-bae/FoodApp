@@ -11,8 +11,8 @@ export const useSortedRecipes = (recipes, sort) => {
     return sortedRecipes;
 }
 
-export const useRecipes = (posts, sort, query) => {
-    const sortedRecipes = useSortedRecipes(posts, sort)
+export const useRecipes = (recipes, sort, query) => {
+    const sortedRecipes = useSortedRecipes(recipes, sort)
     const sortedAndSearchedRecipes = useMemo(() => {
         return sortedRecipes.filter(recipe => recipe.title.toLowerCase().includes(query))
     }, [query, sortedRecipes])
