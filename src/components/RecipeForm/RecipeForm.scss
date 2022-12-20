@@ -13,37 +13,42 @@
     &__difficulty-wrapper {
         display: flex;
         flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
     }
 
     &__difficulty-input {
         visibility: hidden;
         position: absolute;
 
-        &:checked + .recipe__difficulty-name {
-                background-color: $color-primary-card;
-                border-radius: 8px;
-                color: #fff;
-            }
+        &:checked+.recipe__difficulty-name {
+            background-color: $color-primary-card;
+            border-radius: 8px;
+            border: 1px solid $color-primary-card;
+            color: #fff;
+        }
     }
 
     &__difficulty-name {
-        padding: 6px;
+        padding: 8px 16px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 8px;
+        border: 1px solid $color-border;
     }
 
     &__difficulty-label {
         position: relative;
         display: block;
         min-width: 80px;
-        border: 1px solid $color-border;
-        border-radius: 8px;
+     
     }
 
     &__difficulty-icon {
-        width: 25px;
-        height: 25px;
+        width: 22px;
+        height: 22px;
     }
 
     &__form-intro {
@@ -51,28 +56,35 @@
     }
 
     &__form-input {
-        outline: none;
         border-radius: 8px;
         border: 1px solid $color-border;
         padding: 8px;
         margin: 0;
+        margin-bottom: 10px;
     }
 
     &__form-title {
         width: 100%;
+        flex: 2 1 0;
     }
 
     &__form-quantity {
         width: 100%;
         margin-left: 10px;
+        flex: 1 2 0;
     }
 
     &__form-time {
         width: 100%;
+        flex: 1 2 0;
+        margin-left: 10px;
     }
 
     &__form-text {
         border-color: $color-border;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 8px;
     }
 
     &__ingredients {
@@ -81,9 +93,22 @@
 
     &__product-wrapper {
         display: inline-block;
-        padding: 5px;
+        padding: 7px;
         border: 1px solid $color-border;
+        background-color: #dbdbdb;
         border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    &__products-wrapper {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    &__added-products {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 10px;
     }
 
     &__button-plus {
@@ -92,8 +117,8 @@
         padding: 0;
         border-radius: 50%;
         margin-left: 10px;
-        border: 1px solid $color-border;
-        background-color: $color-white;
+        border: 1px solid $color-primary-card;
+        background-color: $color-primary-card;
     }
 
     &__button-plus-icon {
@@ -104,5 +129,27 @@
 
     &__time {
         margin-left: 10px;
+    }
+
+    &__difficulty-title,
+    &__part-title {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: $color-subheader;
+    }
+
+    &__form-serving {
+        max-width: 100px;
+    }
+
+    &__button-create {
+        width: 200px;
+        border: none;
+        border-radius: 23px;
+        background-color: $color-primary-card;
+        font-size: 23px;
+        padding: 7px;
+        margin: auto;
+        margin-top: 10px;
     }
 }

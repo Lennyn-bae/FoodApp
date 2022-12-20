@@ -3,6 +3,8 @@
     {
       "id": 1,
       "title": "Crock Pot Roast",
+      "time": "55 min",
+      "serving": "4",
       "description": "Short description",
       "ingredients": [
         {
@@ -46,6 +48,7 @@
       "description": "Short description",
       "difficulty": "medium",
       "time": "35 min",
+      "serving": "1-2",
       "ingredients": [
         {
           "quantity": "5 teaspoons",
@@ -102,6 +105,8 @@
     {
       "id": 3,
       "title": "Curried Lentils and Rice",
+      "time": "1 h",
+      "serving": "7",
       "description": "Short description",
       "ingredients": [
         {
@@ -151,7 +156,6 @@
       "description": "hyjyj",
       "time": "",
       "difficulty": "medium",
-      "category": "meat",
       "ingredients": [
         {
           "title": "juj",
@@ -164,6 +168,20 @@
       ],
       "steps": "ghghghg",
       "id": 4
+    },
+    {
+      "title": "зщефещуы",
+      "description": "зщефе",
+      "time": "12",
+      "serving": "1-2",
+      "difficulty": "easy",
+      "ingredients": [
+        {
+          "title": "вва"
+        }
+      ],
+      "steps": "2232323\n232323",
+      "id": 5
     }
   ]
 }
