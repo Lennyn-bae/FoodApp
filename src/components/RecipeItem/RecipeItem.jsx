@@ -1,32 +1,48 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as IconBack } from "../../assets/icons/back.svg";
+import { ReactComponent as IconLevel } from "../../assets/icons/level.svg";
+import { ReactComponent as IconTime } from "../../assets/icons/clock.svg";
+import { ReactComponent as IconServing } from "../../assets/icons/serving.svg";
 import food from "../../assets/images/food.png";
 import "./RecipeItem.scss";
-// import { useParams } from "react-router-dom";
-// import { useState } from "react";
-// import { useFetching } from "../../hooks/useFetching";
-// import RecipeService from "../../API/RecipeService";
 
 const RecipeItem = (recipe, remove) => {
     const recipeItem = recipe.recipe;
 
     return (
-
         <section className="recipe">
-            <h1 className="recipe__title">{recipeItem.title}</h1>
-            <div className="recipe__image-container">
+            <div className="recipe__item-intro">
+                <Link to={`/`} className="recipe__item-back">
+                    <IconBack className="recipe__back-icon"/>
+                </Link>
+                <h1 className="recipe__title">{recipeItem.title}</h1>
+            </div>
+            <div className="recipe__item-image recipe__image-container">
                 <img src={food} alt="food" className="recipe__image" />
             </div>
-
-
             <div className="recipe__info">
-                <p>
-                    <span className="recipe__difficulty">{recipeItem.difficulty}</span>
-                    <span className="recipe__time">{recipeItem.time}</span>
-                </p>
-                <h3 className="recipes__ingrediets-title">Ingredients</h3>
-                <ul className="recipe__ingredients">
+                <div className="recipe__short-info">
+                    <span className="recipe__serving recipe__icon">
+                        <IconServing></IconServing>
+                        {recipeItem.serving}
+                    </span>
+                    <span className="recipe__difficulty recipe__icon">
+                        <IconLevel></IconLevel>
+                        {recipeItem.difficulty}
+                    </span>
+                    <span className="recipe__time recipe__icon">
+                        <IconTime></IconTime>
+                        {recipeItem.time}
+                    </span>
+                </div>
+                <h3 className="recipe__ingredients-title">Ingredients</h3>
+                <ul className="recipe__item-ingredients">
                     {recipeItem.ingredients && recipeItem.ingredients.map((item, index) =>
-                        <li key={index} className="recipe__ingredient">{item.title}</li>
+                        <li key={index} className="recipe__ingredient">
+                            <span>{item.title}</span> 
+                            <span>{item.quantity}</span> 
+                        </li>
                     )}
                 </ul>
                 <p className="recipe__steps">

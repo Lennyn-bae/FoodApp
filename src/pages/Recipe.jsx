@@ -18,7 +18,6 @@ const Recipe = (remove) => {
     })
 
 
-
     useEffect(() => {
         fetchRecipeById()
     }, [])

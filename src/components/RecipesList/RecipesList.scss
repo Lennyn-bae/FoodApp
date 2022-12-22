@@ -1,6 +1,9 @@
 @import "../../styles/variables.scss";
 
 .recipes {
+
+    padding-left: 20px;
+    
     &__container {
         display: grid;
         gap: 50px;

@@ -1,10 +1,44 @@
 .recipe {
     background-color: #FEBD2F;
+    height: 100vh;
+
+    &__title {
+        margin: auto;
+    }
+
+    &__item-intro {
+        display: flex;
+        align-items: center;
+        padding: 20px 20px 0 20px;
+    }
+
+    &__back-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    &__icon {
+        text-align: center;
+    }
+
+    &__icon svg {
+        display: block;
+        margin: auto;
+    }
+
+    &__short-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px 0;
+    }
 
     &__info {
         background-color: #fff;
         border-top-left-radius: 60px;
         border-top-right-radius: 60px;
+        padding: 0 20px;
+        height: 100%;
     }
 
     &__ingredients {
@@ -12,11 +46,21 @@
         padding: 0;
     }
 
+    &__ingredients-title {
+        text-align: center;
+        margin-top: 0;
+    }
+
     &__image-container {
         max-width: 85vw;
+        margin: auto;
     }
 
     &__image {
         width: 100%;
+    }
+
+    &__item-image {
+        max-width: 60vw;
     }
 }

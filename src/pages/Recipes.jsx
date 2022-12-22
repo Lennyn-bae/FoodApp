@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import RecipeService from "../API/RecipeService";
-import RecipeFilter from "../components/RecipeFilter/RecipeFilter";
 import RecipeForm from "../components/RecipeForm/RecipeForm";
 import RecipeList from "../components/RecipesList/RecipesList";
 import RecipeCreationModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
@@ -20,18 +19,11 @@ function Recipes() {
         query: ''
     })
 
-
-    const [totalCount, setTotalCount] = useState(0)
-    const [limit, setLimit] = useState(10)
-    const [page, setPage] = useState(1)
     const [modal, setModal] = useState(false)
-    // const [isRecipesLoading, setIsRecipesLoading] = useState(false)
-
-
+    
     const [fetchRecipes, isLoading] = useFetching(async () => {
-        const allRecipes = await RecipeService.getAll(limit, page)
+        const allRecipes = await RecipeService.getAll()
         setRecipes(allRecipes.data)
-        setTotalCount(allRecipes.headers['x-total-count'])
     })
 
 
@@ -68,18 +60,13 @@ function Recipes() {
 
     return (
         <section className="App">
-
             <RecipeCreationModal visible={modal} setVisible={setModal}>
                 <RecipeForm create={createRecipe} />
             </RecipeCreationModal>
-
-            <RecipeFilter filter={filter} setFilter={setFilter} />
-
             {isLoading
                 ? <h1>Loading</h1>
-                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
+                : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} filter={filter} setFilter={setFilter} />
             }
-
             <button
                 className="recipe__button-add"
                 onClick={() => setModal(true)}>
