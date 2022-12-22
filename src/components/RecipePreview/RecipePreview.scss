@@ -1,10 +1,14 @@
-.recipe-preview-card {
-    height: 350px;
-    max-width: 250px;
-    border-radius: 25px;
-    background-color: #fff;
+@import "../../styles/variables.scss";
 
-    &:hover {
-        background-color: #FEBD2F;
+.recipe-preview-card {
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        margin-top: 0;
+        color: $color-subheader;
+        font-size: 16px;
     }
 }
