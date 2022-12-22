@@ -5,6 +5,7 @@ import RecipeFilter from "../components/RecipeFilter/RecipeFilter";
 import RecipeForm from "../components/RecipeForm/RecipeForm";
 import RecipeList from "../components/RecipesList/RecipesList";
 import RecipeCreationModal from "../components/UI/RecipeCreationModal/RecipeCreationModal";
+import { ReactComponent as IconEdit } from "../assets/icons/edit.svg";
 import { useFetching } from "../hooks/useFetching";
 import { useRecipes } from "../hooks/useRecipes";
 
@@ -79,7 +80,12 @@ function Recipes() {
                 : <RecipeList recipes={sortedAndSearchedRecipes} remove={removeRecipe} />
             }
 
-            <button className="recipe__button-add"  onClick={() => setModal(true)}>Add a recipe</button>
+            <button
+                className="recipe__button-add"
+                onClick={() => setModal(true)}>
+                Add a recipe
+                <IconEdit className="recipe__button-add-icon" />
+            </button>
         </section>
     );
 }

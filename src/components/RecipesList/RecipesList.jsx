@@ -6,7 +6,7 @@ const RecipeList = ({ recipes, remove }) => {
 
     return (
         <>
-            <h1 className="title">Recipes book</h1>
+            <h1 className="recipes-book">Recipes book</h1>
             <div className="recipes">
                 <div className="recipes__container snaps-inline">
                         {recipes.map(recipe =>
