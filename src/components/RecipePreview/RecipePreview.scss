@@ -1,14 +1,41 @@
 @import "../../styles/variables.scss";
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+}
+
 .recipe-preview-card {
 
     &__title {
         margin-bottom: 10px;
+        margin-top: 0;
     }
 
     &__description {
         margin-top: 0;
         color: $color-subheader;
         font-size: 16px;
+    }
+
+    &__link {
+        display: block;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    &__icon-open {
+        fill-opacity: 50%;
+        animation: pulse 2s linear infinite alternate;
+        animation-delay: 3s
     }
 }

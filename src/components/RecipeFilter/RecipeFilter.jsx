@@ -1,8 +1,9 @@
 import React from "react";
-import MySelect from "../UI/MySelect/MySelect";
+import Select from "../UI/Select/Select";
+// import { ReactComponent as IconFilter } from "../../assets/icons/filter.svg";
 import "./RecipeFilter.scss";
 
-const RecipeFilter = ({filter, setFilter}) => {
+const RecipeFilter = ({ filter, setFilter }) => {
 
     return (
         <div className="recipe__filters">
@@ -10,11 +11,11 @@ const RecipeFilter = ({filter, setFilter}) => {
                 placeholder="Find a meal for today"
                 value={filter.query}
                 className="recipe__search"
-                onChange={e => setFilter({...filter, query: e.target.value})}
+                onChange={e => setFilter({ ...filter, query: e.target.value })}
             />
-            <MySelect
+            <Select
                 value={filter.sort}
-                onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+                onChange={selectedSort => setFilter({ ...filter, sort: selectedSort })}
                 defaultValue="Sort by"
                 className="recipe__sorting"
                 options={[
@@ -22,6 +23,7 @@ const RecipeFilter = ({filter, setFilter}) => {
                     { value: 'description', name: "By description" }
                 ]}
             />
+
         </div>
     )
 };
