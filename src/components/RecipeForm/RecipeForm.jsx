@@ -6,6 +6,7 @@ import "./RecipeForm.scss";
 const RecipeForm = ({ create }) => {
 
     const [level, setLevel] = useState("easy")
+    const [category, setCategory] = useState("")
 
     const [ingredients, setIngredients] = useState([])
 
@@ -15,6 +16,7 @@ const RecipeForm = ({ create }) => {
         ingredients: [],
         time: '',
         serving: '',
+        category: '',
         difficulty: level,
         steps: ''
     })
@@ -43,6 +45,12 @@ const RecipeForm = ({ create }) => {
 
     }
 
+    const changeCategory = (e) => {
+        setCategory(e.target.value);
+        setRecipe({ ...recipe, category: e.target.value })
+
+    }
+
     const addNewRecipe = (e) => {
         e.preventDefault()
         const newRecipe = {
@@ -63,6 +71,7 @@ const RecipeForm = ({ create }) => {
                     id="title"
                     className="recipe__form-input recipe__form-title"
                     placeholder="Title"
+                    required
                 />
 
                 <input
@@ -71,6 +80,7 @@ const RecipeForm = ({ create }) => {
                     value={recipe.time}
                     className="recipe__form-input recipe__form-time"
                     placeholder="Cooking time"
+                    required
                     onChange={e =>
                         setRecipe({ ...recipe, time: e.target.value })}
                 />
@@ -85,6 +95,51 @@ const RecipeForm = ({ create }) => {
                 onChange={e =>
                     setRecipe({ ...recipe, description: e.target.value })}
             />
+            <h4 className="recipe__category-title">Category</h4>
+            <div className="recipe__category-wrapper">
+                <label htmlFor="fish" className="recipe__category-label">
+                    <input
+                        type="radio"
+                        id="fish"
+                        name="category"
+                        value="fish"
+                        className="recipe__category-input"
+                        checked={category === "fish"}
+                        onChange={changeCategory}
+                    />
+                    <span className="recipe__category-name">
+                        all
+                    </span>
+                </label>
+                <label htmlFor="meat" className="recipe__category-label">
+                    <input
+                        type="radio"
+                        id="meat"
+                        name="category"
+                        value="meat"
+                        className="recipe__category-input"
+                        checked={level === "meat"}
+                        onChange={changeCategory}
+                    />
+                    <span className="recipe__category-name">
+                        meat
+                    </span>
+                </label>
+                <label htmlFor="baking" className="recipe__category-label">
+                    <input
+                        type="radio"
+                        id="baking"
+                        name="category"
+                        value="baking"
+                        className="recipe__category-input"
+                        checked={level === "baking"}
+                        onChange={changeCategory}
+                    />
+                    <span className="recipe__category-name">
+                        baking
+                    </span>
+                </label>
+            </div>
 
             <h4 className="recipe__part-title" htmlFor="ingredients">Ingredients</h4>
             <div className="recipe__ingredients">
@@ -94,12 +149,14 @@ const RecipeForm = ({ create }) => {
                     value={inputValue}
                     placeholder="Ingredient title"
                     className="recipe__form-input recipe__form-title"
+                    required
                     onChange={(e) => setInputValue(e.target.value)}
                 />
                 <input
                     id="ingredients-quantity"
                     type="text"
                     value={quant}
+                    required
                     onChange={(event) => setQuant(event.target.value)}
                     className="recipe__form-input recipe__form-quantity"
                     placeholder="How much"
@@ -129,6 +186,7 @@ const RecipeForm = ({ create }) => {
                 name="steps"
                 rows={6}
                 value={recipe.steps}
+                required
                 className="recipe__form-text"
                 placeholder="First of all..."
                 onChange={e =>
@@ -155,8 +213,6 @@ const RecipeForm = ({ create }) => {
                         easy
                     </span>
                 </label>
-
-
                 <label htmlFor="medium" className="recipe__difficulty-label">
                     <input
                         type="radio"
@@ -193,8 +249,10 @@ const RecipeForm = ({ create }) => {
                         hard
                     </span>
                 </label>
-
             </div>
+
+
+
             <h4 className="recipe__part-title" htmlFor="serving">Serving</h4>
             <input
                 id="serving"

@@ -3,10 +3,40 @@
 .recipes {
 
     padding-left: 20px;
-    
+
+    &__categories-container {
+        padding: 20px;
+        border: none;
+        border-radius: 15px;
+    }
+
+    &__categories-item {
+        border: 1px solid $color-border;
+        text-align: center;
+        padding: 10px 65px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+
+    &__book {
+        text-align: center;
+    }
+
+    &__desktop-image-container {
+        display: none;
+    }
+
+    &__desktop-intro {
+        display: none;
+    }
+
+    &__filters-and-previews {
+        width: 100%;
+    }
+
     &__container {
         display: grid;
-        gap: 50px;
+        gap: 20px;
         grid-auto-flow: column;
         padding: 0 10px;
         overflow-x: auto;
@@ -14,12 +44,58 @@
     }
 
     &__item {
-        display: grid;
+        display: flex;
         min-width: 240px;
-        width: 100%;
         padding: 15px;
         border-radius: 25px;
         background-color: $color-primary-card;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        margin: 40px 0;
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: initial;
+            grid-gap: 20px;
+        }
+
+        &__item {
+            flex-flow: column;
+            background-color: $color-white;
+        }
+
+        &__categories-container {
+            display: flex;
+            flex-flow: column;
+        }
+
+        &__book {
+            font-size: 65px;
+            margin: 0;
+        }
+
+        &__desktop-intro {
+            background-color: $color-primary-card;
+            display: block;
+            min-height: 420px;
+            margin: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        &__desktop-image-container {
+            width: 540px;
+            display: block;
+        }
+
+        &__desktop-image {
+            width: 100%;
+        }
     }
 }
 
@@ -27,17 +103,12 @@
     width: 0;
 }
 
-.recipes .snaps-inline {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: (10px, 1rem);
-}
+// .recipes .snaps-inline {
+//     scroll-snap-type: inline mandatory;
+// }
 
 .snaps-inline>* {
     scroll-snap-align: start;
-}
-
-.recipes-book {
-    text-align: center;
 }
 
 .recipe {

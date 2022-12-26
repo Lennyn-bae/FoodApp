@@ -7,6 +7,7 @@
       "serving": "4",
       "description": "Short description",
       "difficulty": "easy",
+      "category": "meat",
       "ingredients": [
         {
           "quantity": "1",
@@ -48,6 +49,7 @@
       "title": "Big Night Pizza",
       "description": "Short description",
       "difficulty": "medium",
+      "category": "baking",
       "time": "35 min",
       "serving": "1-2",
       "ingredients": [
@@ -109,6 +111,7 @@
       "time": "1 h",
       "serving": "7",
       "description": "Short description",
+      "category": "meat",
       "ingredients": [
         {
           "quantity": "1 quart",
@@ -152,6 +155,5 @@
       ],
       "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
     }
-   
   ]
 }
