@@ -7,7 +7,7 @@ import { ReactComponent as IconServing } from "../../assets/icons/serving.svg";
 import food from "../../assets/images/food.png";
 import "./RecipeItem.scss";
 
-const RecipeItem = (recipe, remove) => {
+const RecipeItem = (recipe) => {
     const recipeItem = recipe.recipe;
 
     return (
@@ -49,7 +49,6 @@ const RecipeItem = (recipe, remove) => {
                     {recipeItem.steps}
                 </p>
             </div>
-
            
         </section>
 

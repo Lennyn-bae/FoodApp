@@ -11,11 +11,10 @@ const RecipePreview = (props) => {
 
     return (
         <div className={props.className}>
-           
             <div className="recipe-preview-card__wrapper">
                 <div className="recipe-preview-card__image-container">
-                    <img src={food} alt="food" className="recipe__image" />
                     <Link to={`/recipes/${props.recipe.id}`} className="recipe-preview-card__link">
+                        <img src={food} alt="food" className="recipe__image" />
                         <IconOpen className="recipe-preview-card__icon-open" />
                     </Link>
                 </div>

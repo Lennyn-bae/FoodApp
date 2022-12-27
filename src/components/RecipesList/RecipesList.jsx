@@ -2,11 +2,16 @@ import React, { useState, useMemo } from "react";
 import RecipeFilter from "../RecipeFilter/RecipeFilter";
 import RecipePreview from "../RecipePreview/RecipePreview";
 import cooking from "../../assets/images/cooking.svg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import "./RecipesList.scss";
+
 
 const RecipeList = ({ recipes, remove, filter, setFilter }) => {
 
     const [selectedCategory, setSelectedCategory] = useState();
+
+    const icon = <FontAwesomeIcon icon={faCoffee} />;
 
     function getFilteredList() {
         if (!selectedCategory) {
@@ -19,12 +24,6 @@ const RecipeList = ({ recipes, remove, filter, setFilter }) => {
     function handleCategoryChange(event) {
         setSelectedCategory(event.target.value);
     }
-
-    function clearCategoryChange(event) {
-        setSelectedCategory('');
-    }
-
-
 
     return (
         <>
@@ -48,7 +47,7 @@ const RecipeList = ({ recipes, remove, filter, setFilter }) => {
                         className="recipes__categories-container"
                         multiple
                     >
-                        <option value="" className="recipes__categories-item" onClick={clearCategoryChange}>All at once</option>
+                        <option value="" className="recipes__categories-item">All at once</option>
                         <option value="fish" className="recipes__categories-item">Fish</option>
                         <option value="meat" className="recipes__categories-item">Meat</option>
                         <option value="baking" className="recipes__categories-item">Baking</option>

@@ -44,7 +44,6 @@
     &__link {
         display: block;
         text-align: right;
-        margin-right: 20px;
     }
 
     &__icon-open {
@@ -61,6 +60,7 @@
     }
 
     @media screen and (min-width: 1024px) {
+
         &__icon-open {
             display: none;
         }
