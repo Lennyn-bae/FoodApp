@@ -40,6 +40,7 @@ function Recipes() {
                 description: newRecipe.description,
                 time: newRecipe.time,
                 serving: newRecipe.serving,
+                category: newRecipe.category,
                 difficulty: newRecipe.difficulty,
                 ingredients: newRecipe.ingredients,
                 steps: newRecipe.steps

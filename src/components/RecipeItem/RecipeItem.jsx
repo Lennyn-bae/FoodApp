@@ -7,7 +7,7 @@ import { ReactComponent as IconServing } from "../../assets/icons/serving.svg";
 import food from "../../assets/images/food.png";
 import "./RecipeItem.scss";
 
-const RecipeItem = (recipe, remove) => {
+const RecipeItem = (recipe) => {
     const recipeItem = recipe.recipe;
 
     return (
@@ -40,8 +40,8 @@ const RecipeItem = (recipe, remove) => {
                 <ul className="recipe__item-ingredients">
                     {recipeItem.ingredients && recipeItem.ingredients.map((item, index) =>
                         <li key={index} className="recipe__ingredient">
-                            <span>{item.title}</span> 
-                            <span>{item.quantity}</span> 
+                            <span className="recipe__ingredient-title">{item.title}</span> 
+                            <span className="recipe__ingredient-quantity">{item.quantity}</span> 
                         </li>
                     )}
                 </ul>
@@ -49,7 +49,6 @@ const RecipeItem = (recipe, remove) => {
                     {recipeItem.steps}
                 </p>
             </div>
-
            
         </section>
 

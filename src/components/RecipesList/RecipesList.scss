@@ -2,11 +2,101 @@
 
 .recipes {
 
-    padding-left: 20px;
-    
+    &__categories-scroll {
+        overflow-x: auto;
+        width: 100%;
+
+        .recipes__categories-container {
+            max-height: 90px;
+            padding: 20px;
+        }
+
+        .recipes__categories-item {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 5px 40px;
+
+            &::before {
+                display: inline-block;
+                vertical-align: middle;
+                width: 23px;
+                height: 23px;
+                padding: 5px;
+            }
+        }
+    }
+
+    &__categories-title {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    &__categories-container {
+        padding: 20px;
+        border: none;
+        border-radius: 15px;
+        height: 400px;
+        background-color: $color-background;
+        visibility: hidden;
+    }
+
+    &__categories-item {
+        visibility: visible;
+        border: 1px solid $color-border;
+        text-align: center;
+        padding: 10px 55px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            display: block;
+            content: "";
+            background: url('../../assets/icons/course.svg') no-repeat;
+            background-color: $color-white;
+            background-position: center;
+            border-radius: 50%;
+            padding: 8px;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        &:hover,
+        &:checked,
+        &:checked:hover {
+            background-color: $color-primary-card !important;
+        }
+
+    }
+
+    &__book {
+        text-align: center;
+    }
+
+    &__book-desc {
+        color: $color-subtitle;
+        font-size: 25px;
+        font-weight: 500;
+        display: none;
+    }
+
+    &__desktop-image-container {
+        display: none;
+    }
+
+    &__desktop-intro {
+        // display: none;
+    }
+
+    &__filters-and-previews {
+        width: 100%;
+    }
+
     &__container {
         display: grid;
-        gap: 50px;
+        gap: 20px;
         grid-auto-flow: column;
         padding: 0 10px;
         overflow-x: auto;
@@ -14,12 +104,91 @@
     }
 
     &__item {
-        display: grid;
+        display: flex;
         min-width: 240px;
-        width: 100%;
         padding: 15px;
         border-radius: 25px;
         background-color: $color-primary-card;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        margin: 40px 0;
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: initial;
+            grid-gap: 20px;
+        }
+
+        &__item {
+            flex-flow: column;
+            background-color: $color-white;
+
+            &:hover {
+                background-color: $color-text;
+
+                .recipe-preview-card__title,
+                .recipe-preview-card__list-item {
+                    color: $color-white;
+                }
+            }
+        }
+
+        &__categories-container {
+            display: flex;
+            flex-flow: column;
+        }
+
+        &__book {
+            font-size: 65px;
+            margin: 0;
+        }
+
+        &__book-desc {
+            display: block;
+        }
+
+        &__desktop-intro {
+            background-color: $color-primary-card;
+            display: block;
+            min-height: 420px;
+            margin: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        &__desktop-image-container {
+            width: 540px;
+            display: block;
+        }
+
+        &__desktop-image {
+            width: 100%;
+        }
+    }
+}
+
+.desktop {
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+        display: block;
+
+        h3 {
+            padding-left: 20px;
+        }
+    }
+}
+
+.mobile {
+    display: block;
+
+    @media screen and (min-width: 1024px) {
+        display: none;
     }
 }
 
@@ -27,17 +196,12 @@
     width: 0;
 }
 
-.recipes .snaps-inline {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: (10px, 1rem);
-}
+// .recipes .snaps-inline {
+//     scroll-snap-type: inline mandatory;
+// }
 
 .snaps-inline>* {
     scroll-snap-align: start;
-}
-
-.recipes-book {
-    text-align: center;
 }
 
 .recipe {
@@ -50,6 +214,7 @@
         padding: 10px 30px;
         border-radius: 25px;
         border: none;
+        margin-bottom: 20px;
     }
 
     &__button-add-icon {

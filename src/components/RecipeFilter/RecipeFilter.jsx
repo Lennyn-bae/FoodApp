@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "../UI/Select/Select";
-// import { ReactComponent as IconFilter } from "../../assets/icons/filter.svg";
 import "./RecipeFilter.scss";
 
 const RecipeFilter = ({ filter, setFilter }) => {
@@ -23,7 +22,6 @@ const RecipeFilter = ({ filter, setFilter }) => {
                     { value: 'description', name: "By description" }
                 ]}
             />
-
         </div>
     )
 };

@@ -6,11 +6,14 @@
 }
 
 .recipe {
-    &__difficulty-title {
+
+    &__difficulty-title,
+    &__category-title {
         margin-bottom: 10px;
     }
 
-    &__difficulty-wrapper {
+    &__difficulty-wrapper,
+    &__category-wrapper {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -30,7 +33,20 @@
         }
     }
 
-    &__difficulty-name {
+    &__category-input {
+        visibility: hidden;
+        position: absolute;
+
+        &:checked+.recipe__category-name {
+            background-color: $color-primary-card;
+            border-radius: 8px;
+            border: 1px solid $color-primary-card;
+            color: #fff;
+        }
+    }
+
+    &__difficulty-name,
+    &__category-name {
         padding: 8px 16px;
         display: flex;
         justify-content: center;
@@ -39,16 +55,21 @@
         border: 1px solid $color-border;
     }
 
-    &__difficulty-label {
+    &__difficulty-label,
+    &__category-label {
         position: relative;
         display: block;
         min-width: 80px;
-     
+
     }
 
     &__difficulty-icon {
         width: 22px;
         height: 22px;
+    }
+
+    &__difficulty-icon path {
+        fill: $color-primary-card;
     }
 
     &__form-intro {
