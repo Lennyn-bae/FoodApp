@@ -22,7 +22,6 @@ const RecipeFilter = ({ filter, setFilter }) => {
                     { value: 'description', name: "By description" }
                 ]}
             />
-
         </div>
     )
 };

@@ -68,6 +68,10 @@
         height: 22px;
     }
 
+    &__difficulty-icon path {
+        fill: $color-primary-card;
+    }
+
     &__form-intro {
         display: flex;
     }

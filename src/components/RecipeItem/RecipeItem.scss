@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .recipe {
     background-color: #FEBD2F;
     height: 100vh;
@@ -26,6 +28,11 @@
         margin: auto;
     }
 
+    &__icon svg path {
+        fill: $color-primary-card;
+        stroke-width: 2px;
+    }
+
     &__short-info {
         display: flex;
         align-items: center;
@@ -37,8 +44,28 @@
         background-color: #fff;
         border-top-left-radius: 60px;
         border-top-right-radius: 60px;
-        padding: 0 20px;
-        height: 100%;
+        padding: 0 20px 30px;
+    }
+
+    &__item-ingredients {
+        padding: 0;
+        list-style-type: none;
+
+        &::after {
+            display: block;
+            content: '';
+            width: 80%;
+            height: 2px;
+            background-color: $color-border;
+            margin: 20px auto 25px;
+
+        }
+    }
+
+    &__ingredient {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
     }
 
     &__ingredients {
@@ -53,7 +80,7 @@
 
     &__image-container {
         max-width: 85vw;
-        margin: auto;
+        margin: 20px auto 30px;
     }
 
     &__image {
@@ -62,5 +89,9 @@
 
     &__item-image {
         max-width: 60vw;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 20vw;
+        }
     }
 }

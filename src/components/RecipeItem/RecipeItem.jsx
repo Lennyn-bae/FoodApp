@@ -40,8 +40,8 @@ const RecipeItem = (recipe) => {
                 <ul className="recipe__item-ingredients">
                     {recipeItem.ingredients && recipeItem.ingredients.map((item, index) =>
                         <li key={index} className="recipe__ingredient">
-                            <span>{item.title}</span> 
-                            <span>{item.quantity}</span> 
+                            <span className="recipe__ingredient-title">{item.title}</span> 
+                            <span className="recipe__ingredient-quantity">{item.quantity}</span> 
                         </li>
                     )}
                 </ul>
