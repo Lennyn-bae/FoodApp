@@ -20,7 +20,7 @@ function Recipes() {
     })
 
     const [modal, setModal] = useState(false)
-    
+
     const [fetchRecipes, isLoading] = useFetching(async () => {
         const allRecipes = await RecipeService.getAll()
         setRecipes(allRecipes.data)
@@ -50,12 +50,15 @@ function Recipes() {
     }
 
     const removeRecipe = (recipe) => {
-        axios
-            .delete(`http://localhost:3004/recipes/${recipe.id}`)
-            .then(() => {
-                console.log("Recipe was deleted!");
-            });
-        setRecipes(recipes.filter(rec => rec.id !== recipe.id))
+        if (window.confirm("Are you sure you want to delete this recipe?")) {
+            axios
+                .delete(`http://localhost:3004/recipes/${recipe.id}`)
+
+            setRecipes(recipes.filter(rec => rec.id !== recipe.id))
+        } else {
+            return null
+        }
+
     }
 
 

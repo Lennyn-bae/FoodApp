@@ -16,7 +16,6 @@
     &__category-wrapper {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
     }
@@ -25,7 +24,7 @@
         visibility: hidden;
         position: absolute;
 
-        &:checked+.recipe__difficulty-name {
+        &:checked + .recipe__difficulty-name {
             background-color: $color-primary-card;
             border-radius: 8px;
             border: 1px solid $color-primary-card;
@@ -37,7 +36,7 @@
         visibility: hidden;
         position: absolute;
 
-        &:checked+.recipe__category-name {
+        &:checked + .recipe__category-name {
             background-color: $color-primary-card;
             border-radius: 8px;
             border: 1px solid $color-primary-card;
@@ -60,7 +59,7 @@
         position: relative;
         display: block;
         min-width: 80px;
-
+        margin-right: 10px;
     }
 
     &__difficulty-icon {
@@ -68,9 +67,9 @@
         height: 22px;
     }
 
-    &__difficulty-icon path {
-        fill: $color-primary-card;
-    }
+    // &__difficulty-icon path {
+    //     fill: $color-primary-card;
+    // }
 
     &__form-intro {
         display: flex;
@@ -153,6 +152,7 @@
     }
 
     &__difficulty-title,
+    &__category-title,
     &__part-title {
         margin-top: 0;
         margin-bottom: 10px;
@@ -160,7 +160,7 @@
     }
 
     &__form-serving {
-        max-width: 100px;
+        max-width: 135px;
     }
 
     &__button-create {
