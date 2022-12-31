@@ -1,7 +1,6 @@
 @import "../../styles/variables.scss";
 
 .recipe {
-    background-color: #FEBD2F;
     height: 100vh;
 
     &__title {
@@ -28,11 +27,6 @@
         margin: auto;
     }
 
-    &__icon svg path {
-        fill: $color-primary-card;
-        stroke-width: 2px;
-    }
-
     &__short-info {
         display: flex;
         align-items: center;
@@ -42,8 +36,7 @@
 
     &__info {
         background-color: #fff;
-        border-top-left-radius: 60px;
-        border-top-right-radius: 60px;
+        border-radius: 60px;
         padding: 0 20px 30px;
     }
 
@@ -91,7 +84,39 @@
         max-width: 60vw;
 
         @media screen and (min-width: 1024px) {
-            max-width: 20vw;
+            max-width: 80%;
         }
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            margin: 10px;
+            padding: 5px;
+            flex: 2 1 auto;
+        }
+
+        &__info {
+
+            max-width: 47%;
+            
+            .recipe__short-info {
+                display: none;
+            }
+        }
+
+        &__ingredients-title {
+            font-size: 35px;
+            margin-top: 30px;
+        }
+
+        &__item-ingredients,
+        &__steps {
+            padding: 0 20px;
+            font-size: 18px;
+        }
+
     }
 }

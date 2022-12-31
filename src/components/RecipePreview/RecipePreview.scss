@@ -15,6 +15,18 @@
 }
 
 .recipe-preview-card {
+    &__intro {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            display: none;
+            border: none;
+            background: transparent;
+            appearance: none;
+            outline: none;
+        }
+    }
 
     &__title {
         margin-bottom: 10px;
@@ -23,6 +35,9 @@
 
     &__details {
         width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
     }
 
     &__list-item {
@@ -60,6 +75,13 @@
     }
 
     @media screen and (min-width: 1024px) {
+
+        &__intro {
+        
+            button {
+              display: block;
+            }
+        }
 
         &__icon-open {
             display: none;

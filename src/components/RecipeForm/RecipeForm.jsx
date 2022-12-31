@@ -6,7 +6,7 @@ import "./RecipeForm.scss";
 const RecipeForm = ({ create }) => {
 
     const [level, setLevel] = useState("easy")
-    const [category, setCategory] = useState("")
+    const [category, setCategory] = useState("fish")
 
     const [ingredients, setIngredients] = useState([])
 
@@ -16,7 +16,7 @@ const RecipeForm = ({ create }) => {
         ingredients: [],
         time: '',
         serving: '',
-        category: '',
+        category: category,
         difficulty: level,
         steps: ''
     })
@@ -95,6 +95,15 @@ const RecipeForm = ({ create }) => {
                 onChange={e =>
                     setRecipe({ ...recipe, description: e.target.value })}
             />
+            <input
+                id="serving"
+                type="text"
+                value={recipe.serving}
+                className="recipe__form-input recipe__form-serving"
+                placeholder="Serving... How many?"
+                onChange={e =>
+                    setRecipe({ ...recipe, serving: e.target.value })}
+            />
             <h4 className="recipe__category-title">Category</h4>
             <div className="recipe__category-wrapper">
                 <label htmlFor="fish" className="recipe__category-label">
@@ -108,7 +117,7 @@ const RecipeForm = ({ create }) => {
                         onChange={changeCategory}
                     />
                     <span className="recipe__category-name">
-                        all
+                        fish
                     </span>
                 </label>
                 <label htmlFor="meat" className="recipe__category-label">
@@ -118,7 +127,7 @@ const RecipeForm = ({ create }) => {
                         name="category"
                         value="meat"
                         className="recipe__category-input"
-                        checked={level === "meat"}
+                        checked={category === "meat"}
                         onChange={changeCategory}
                     />
                     <span className="recipe__category-name">
@@ -132,7 +141,7 @@ const RecipeForm = ({ create }) => {
                         name="category"
                         value="baking"
                         className="recipe__category-input"
-                        checked={level === "baking"}
+                        checked={category === "baking"}
                         onChange={changeCategory}
                     />
                     <span className="recipe__category-name">
@@ -172,7 +181,7 @@ const RecipeForm = ({ create }) => {
                         {ingredients.map((item, index) => (
                             <div className="recipe__product-wrapper" key={index}>
                                 <span className="recipe__product-name">{item.title} -</span>
-                                <span className="recipe__product0quantity"> {item.quantity}</span>
+                                <span className="recipe__product-quantity"> {item.quantity}</span>
                             </div>
                         ))}
                     </div>
@@ -250,21 +259,6 @@ const RecipeForm = ({ create }) => {
                     </span>
                 </label>
             </div>
-
-
-
-            <h4 className="recipe__part-title" htmlFor="serving">Serving</h4>
-            <input
-                id="serving"
-                type="text"
-                value={recipe.serving}
-                className="recipe__form-input recipe__form-serving"
-                placeholder="How many"
-                onChange={e =>
-                    setRecipe({ ...recipe, serving: e.target.value })}
-            />
-
-
             <button className="recipe__button-create" onClick={addNewRecipe}>Create</button>
         </form>
     )
